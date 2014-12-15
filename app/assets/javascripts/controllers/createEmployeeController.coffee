@@ -34,13 +34,14 @@ angular.module('cafeTownsend.employee')
         $location.path '/login'
 
     @submit = (validData)->
+
       if !!validData
         SelectedEmployee.instance.create()
-#        .then ->
-#            self.browseToOverview()
-#          , (error) ->
-#            message = "Error trying to create a new employee: #{JSON.stringify(error.data)})"
-#            alert message
+        .then ->
+          self.browseToOverview()
+        , (error) ->
+          message = "Error trying to create a new employee: #{JSON.stringify(error.data)})"
+          alert message
 
     @browseToOverview = ->
       # clear selected employee
